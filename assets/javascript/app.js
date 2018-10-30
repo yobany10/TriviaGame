@@ -93,3 +93,52 @@ function newQuestion() {
         answerPage();
     });
 }
+
+function countdown(){
+    seconds = 15;
+    $('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
+    answered = true;
+    time = setInterval(showCountdown, 1000);
+}
+
+function showCountdown(){
+    seconds--;
+    $('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
+    if(seconds < 1){
+        clearInterval(time);
+        answered = false;
+        answerPage();
+    }
+}
+
+function answerPage(){
+    $('#currentQuestion').empty();
+    $('.thisChoice').empty();
+    $('.question').empty();
+
+    var rightAnswerText = triviaQuestions[currentQuestion].answerList[triviaQuestions[currentQuestion].answer];
+    var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
+    $('#gif').html('<img src = "assets/images/'+ gifArray[currentQuestion] +'.gif" width = "400px">');
+
+    if((userSelect == rightAnswerIndex) && (answered == true)){
+        correctAnswer++;
+        $('#message').html(messages.correct);
+    } else if((userSelect != rightAnswerIndex) && (answered == true)){
+        incorrectAnswer++;
+        $('#message').html(messages.incorrect);
+        $('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
+    } else{
+        unanswered++;
+        $('#message').html(messages.endTime);
+        $('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
+
+    }
+
+    if(currentQuestion == (triviaQuestions.length-1)){
+        setTimeout(scoreboard, 5000)
+    } else{
+        currentQuestion++;
+        setTimeout(newQuestion, 5000);
+    }
+}
+
