@@ -1,6 +1,6 @@
 var triviaQuestions = [{
     question: "How long does it take for sun rays to reach Earth?",
-    answerList: ["1", "2", "3", "4"],
+    answerList: ["8 minutes", "2 hours", "12 days", "5 years"],
     answer: 0
 },{
     question: "How long does it take for sun rays to reach Earth?",
@@ -49,21 +49,21 @@ var messages = {
     finished: "Let's see how well you did."
 }
 
-$('#startButton').on('click', function(){
+$('.startButton').on('click', function(){
     $(this).hide();
     newGame();
 });
 
-$('#startOverButton').on('click', function(){
+$('.startOverButton').on('click', function(){
     $(this).hide();
     newGame();
 });
 
 function newGame(){
-    $('#finalMessage').empty();
-    $('#correctAnswers').empty();
-    $('#incorrectAnswers').empty();
-    $('#unanswered').empty();
+    $('.finalMessage').empty();
+    $('.correctAnswers').empty();
+    $('.incorrectAnswers').empty();
+    $('.unanswered').empty();
     currentQuestion = 0;
     correctAnswer = 0;
     incorrectAnswer = 0;
@@ -72,9 +72,9 @@ function newGame(){
 }
 
 function newQuestion() {
-    $('#message').empty();
-    $('#correctedAnswer').empty();
-    $('#gif').empty();
+    $('.message').empty();
+    $('.correctedAnswer').empty();
+    $('.gif').empty();
     answered = true;
 
     $('currentQuestion').html('Question #'+(currentQuestion+1)+'/'+triviaQuestions.length);
@@ -96,14 +96,14 @@ function newQuestion() {
 
 function countdown(){
     seconds = 15;
-    $('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
+    $('.timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
     answered = true;
     time = setInterval(showCountdown, 1000);
 }
 
 function showCountdown(){
     seconds--;
-    $('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
+    $('.timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
     if(seconds < 1){
         clearInterval(time);
         answered = false;
@@ -112,25 +112,25 @@ function showCountdown(){
 }
 
 function answerPage(){
-    $('#currentQuestion').empty();
+    $('.currentQuestion').empty();
     $('.thisChoice').empty();
     $('.question').empty();
 
     var rightAnswerText = triviaQuestions[currentQuestion].answerList[triviaQuestions[currentQuestion].answer];
     var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
-    $('#gif').html('<img src = "assets/images/'+ gifArray[currentQuestion] +'.gif" width = "400px">');
+    $('.gif').html('<img src = "assets/images/'+ gifArray[currentQuestion] +'.gif" width = "400px">');
 
     if((userSelect == rightAnswerIndex) && (answered == true)){
         correctAnswer++;
-        $('#message').html(messages.correct);
+        $('.message').html(messages.correct);
     } else if((userSelect != rightAnswerIndex) && (answered == true)){
         incorrectAnswer++;
-        $('#message').html(messages.incorrect);
-        $('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
+        $('.message').html(messages.incorrect);
+        $('.correctedAnswer').html('The correct answer was: ' + rightAnswerText);
     } else{
         unanswered++;
-        $('#message').html(messages.endTime);
-        $('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
+        $('.message').html(messages.endTime);
+        $('.correctedAnswer').html('The correct answer was: ' + rightAnswerText);
 
     }
 
@@ -142,3 +142,17 @@ function answerPage(){
     }
 }
 
+function scoreboard(){
+    $('.timeLeft').empty();
+    $('.message').empty();
+    $('.correctedAnswer').empty();
+    $('.gif').empty();
+
+    $('.finalMessage').html(messages.finished);
+    $('.correctAnswers').html("Correct Answers: " + correctAnswer);
+    $('.incorrectAnswers').html("Incorrect Answers: " + incorrectAnswer);
+    $('.unanswered').html("Unanswered: " + unanswered);
+    $('.startOverButton').addClass('reset');
+    $('.startOverButton').show();
+    $('.startOverButton').html('Start Over?');
+}
