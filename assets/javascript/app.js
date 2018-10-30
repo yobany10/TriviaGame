@@ -3,17 +3,17 @@ var triviaQuestions = [{
     answerList: ["8 minutes", "2 hours", "12 days", "5 years"],
     answer: 0
 },{
-    question: "How long does it take for sun rays to reach Earth?",
-    answerList: ["1", "2", "3", "4"],
+    question: "Which is the largest planet in our solar system?",
+    answerList: ["Earth", "Sun", "Jupiter", "Saturn"],
+    answer: 2
+},{
+    question: "Which planet has the most volcanoes?",
+    answerList: ["Venus", "Earth", "Sun", "Mars"],
     answer: 0
 },{
-    question: "How long does it take for sun rays to reach Earth?",
-    answerList: ["1", "2", "3", "4"],
-    answer: 0
-},{
-    question: "How long does it take for sun rays to reach Earth?",
-    answerList: ["1", "2", "3", "4"],
-    answer: 0
+    question: "When was the fist man-made object sent into space?",
+    answerList: ["1851", "2001", "1957", "space doesn't exist"],
+    answer: 2
 },{
     question: "How long does it take for sun rays to reach Earth?",
     answerList: ["1", "2", "3", "4"],
