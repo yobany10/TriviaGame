@@ -46,7 +46,7 @@ var messages = {
     correct: "Correct!",
     incorrect: "Incorrect!",
     endTime: "Out of time!",
-    finished: "Let's see how well you did."
+    finished: "<h1>Let's see how well you did.</h1>"
 }
 
 $('.startButton').on('click', function(){
