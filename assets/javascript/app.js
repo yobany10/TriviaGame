@@ -12,12 +12,12 @@ var triviaQuestions = [{
     answer: 0
 },{
     question: "When was the fist man-made object sent into space?",
-    answerList: ["1851", "2001", "1957", "space doesn't exist"],
+    answerList: ["1982", "2001", "1957", "never"],
     answer: 2
 },{
-    question: "How long does it take for sun rays to reach Earth?",
-    answerList: ["1", "2", "3", "4"],
-    answer: 0
+    question: "On Venus a day is longer than?",
+    answerList: ["1 week(on Venus)", "4 months(on Venus)", "1 year(on Venus)", "11 years(on Venus"],
+    answer: 3
 },{
     question: "How long does it take for sun rays to reach Earth?",
     answerList: ["1", "2", "3", "4"],
