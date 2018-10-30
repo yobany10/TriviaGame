@@ -17,27 +17,27 @@ var triviaQuestions = [{
 },{
     question: "On Venus a day is longer than?",
     answerList: ["1 week(on Venus)", "4 months(on Venus)", "1 year(on Venus)", "11 years(on Venus"],
+    answer: 2
+},{
+    question: "What is the name of Saturns largest moon?",
+    answerList: ["Pandora", "Atlas", "Titan", "Hyperion"],
+    answer: 2
+},{
+    question: "Who was the first person to walk on the moon?",
+    answerList: ["Neil Armstrong", "David Scott", "Pete Conrad", "Michael Jackson"],
+    answer: 0
+},{
+    question: "What is the closest planet to the sun?",
+    answerList: ["Earth", "Saturn", "Venus", "Mercury"],
     answer: 3
 },{
-    question: "How long does it take for sun rays to reach Earth?",
-    answerList: ["1", "2", "3", "4"],
-    answer: 0
+    question: "What is the hottest planet in our solar system?",
+    answerList: ["Mercury", "Venus", "Mars", "Jupiter"],
+    answer: 1
 },{
-    question: "How long does it take for sun rays to reach Earth?",
-    answerList: ["1", "2", "3", "4"],
-    answer: 0
-},{
-    question: "How long does it take for sun rays to reach Earth?",
-    answerList: ["1", "2", "3", "4"],
-    answer: 0
-},{
-    question: "How long does it take for sun rays to reach Earth?",
-    answerList: ["1", "2", "3", "4"],
-    answer: 0
-},{
-    question: "How long does it take for sun rays to reach Earth?",
-    answerList: ["1", "2", "3", "4"],
-    answer: 0
+    question: "Which of these is not a naturally occuring smell in space?",
+    answerList: ["Hot metal", "Barbecue", "Diesel fumes", "Spearmint"],
+    answer: 3
 }];
 
 var gifArray = ['question1', 'question2', 'question3', 'question4', 'question5', 'question6', 'question7', 'question8', 'question9', 'question10'];
